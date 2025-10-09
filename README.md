@@ -6,7 +6,7 @@
 C# classes and extensions I find useful in my .NET projects.
 
 ## Demo
-A demo of all my `DotNet` packages can be found [here](https://github.com/marqdouj/dotnet.demo){:target="_blank"}.
+A demo of all my `DotNet` packages can be found [here](https://github.com/marqdouj/dotnet.demo).
 
 ## Features
 - **Extensions**
