@@ -242,5 +242,23 @@ namespace Marqdouj.DotNet.General.Tests
         }
 
         #endregion
+
+        [TestMethod]
+        public void NRange_BindValue()
+        {
+            var range = new NRange<double>(0, 10, 1);
+
+            range.StringValue = "";
+            Assert.AreEqual(1, range.Value);
+
+            range.StringValue = "5";
+            Assert.AreEqual(5, range.Value);
+
+            range.StringValue = "-1";
+            Assert.AreEqual(0, range.Value);
+
+            range.StringValue = "15";
+            Assert.AreEqual(10, range.Value);
+        }
     }
 }

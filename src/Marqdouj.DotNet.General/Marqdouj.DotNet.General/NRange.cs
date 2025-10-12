@@ -1,4 +1,5 @@
-﻿using System.Numerics;
+﻿using System.Globalization;
+using System.Numerics;
 using System.Text.Json.Serialization;
 
 namespace Marqdouj.DotNet.General
@@ -99,6 +100,20 @@ namespace Marqdouj.DotNet.General
         ///The increment value used for each step in a sequence or calculation (if applicable).
         /// </summary>
         public T Step { get; set; } = T.CreateChecked(1);
+
+        /// <summary>
+        /// <see cref="IStringValue"/>
+        /// </summary>
+        /// <remarks>If value does not parse it will be ignored.</remarks>
+        public string? StringValue
+        {
+            get => Value.ToString();
+            set
+            {
+                if (T.TryParse(value, NumberStyles.Any, null, out var result))
+                    Value = result;
+            }
+        }
 
         public override string ToString() => Value?.ToString() ?? string.Empty;
     }

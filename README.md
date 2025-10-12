@@ -31,6 +31,10 @@ A demo of all my `DotNet` packages can be found [here](https://github.com/marqdo
   - `StateModel`. Provides a base class for models that support state change notification.
 
 ## Release Notes
+- `10.0.0-Preview1.1`
+  - `NRange`. Added `StringValue` property. Wraps the Value property as a string.
+    Typically used in binding scenarios that require a string.
+
 - `10.0.0-Preview1`
   - `EnumList`.
     - `Contains`. Added new method.
