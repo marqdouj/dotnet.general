@@ -27,13 +27,19 @@ namespace Marqdouj.DotNet.General
         /// </summary>
         /// <remarks>Duplicates and null values are ignored.</remarks>
         /// <param name="item">The item to add to the collection.</param>
-        public void AddValue(T item)
+        /// <returns>true if item was added; otherwise false</returns>
+        public bool AddValue(T item)
         {
             if (item == null)
-                return;
+                return false;
 
             if (!items.Contains(item))
+            {
                 items.Add(item);
+                return true;
+            }
+
+            return false;
         }
 
         /// <summary>
@@ -64,6 +70,13 @@ namespace Marqdouj.DotNet.General
                 AddValue(item);
             }
         }
+
+        /// <summary>
+        /// <see cref="List{T}.Contains(T)"/>
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>true if item was found in the list; otherwise false</returns>
+        public bool Contains(T value) { return items.Contains(value); }
 
         /// <summary>
         /// Removes the first occurrence of the specified item from the collection.

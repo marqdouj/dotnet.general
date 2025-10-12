@@ -93,13 +93,15 @@
             var items = new EnumList<MyEnum>();
 
             //Act
-            items.AddValue(MyEnum.A);
-            items.AddValue(MyEnum.A);
+            var addFirst = items.AddValue(MyEnum.A);
+            var addSecond = items.AddValue(MyEnum.A);
             var count = items.Items.Count;
 
             //Assert
             Assert.AreEqual(1, count);
             Assert.IsTrue(items.Items.Contains(MyEnum.A));
+            Assert.IsTrue(addFirst); 
+            Assert.IsFalse(addSecond);
         }
 
         [TestMethod]

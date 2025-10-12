@@ -31,5 +31,10 @@ A demo of all my `DotNet` packages can be found [here](https://github.com/marqdo
   - `StateModel`. Provides a base class for models that support state change notification.
 
 ## Release Notes
+- `10.0.0-Preview1`
+  - `EnumList`.
+    - `Contains`. Added new method.
+    - `AddValue`. changed the return value from void to bool.
+
 - `10.0.0-Preview`
   - Initial release.
