@@ -21,7 +21,6 @@ A demo of all my `DotNet` packages can be found [here](https://github.com/marqdo
     - `ToNList<T>(string)`. Converts a delimited string to a List of numbers (NList).
 
   - `Strings`
-    - `ToCrLf()`. Converts line endings in the specified string to carriage return and line feed (`\r\n`).
     - `Truncate`. Truncates a string to a specified length.
 
 - **Classes**
@@ -30,6 +29,9 @@ A demo of all my `DotNet` packages can be found [here](https://github.com/marqdo
   - `StateModel`. Provides a base class for models that support state change notification.
 
 ## Release Notes
+- `10.0.0-Preview3.1`
+  - `Strings`. Removed `string.ToCrLf()`. use CLR method `string.ReplaceLineEndings()` instead.
+
 - `10.0.0-Preview3`
   - `Strings`. Removed `string.ToNewLine()`. use CLR method `string.ReplaceLineEndings()` instead.
 

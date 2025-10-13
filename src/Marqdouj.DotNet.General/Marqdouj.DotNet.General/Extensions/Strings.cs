@@ -8,27 +8,6 @@
         public const string ELLIPSIS = "…";
 
         /// <summary>
-        /// Converts all line endings in the specified string to carriage return and line feed (CRLF) format.
-        /// </summary>
-        /// <remarks>This method replaces all existing line endings (LF, CR, or CRLF) in the input string
-        /// with CRLF sequences. It is useful for ensuring consistent line endings, for example, when preparing text for
-        /// environments that require CRLF formatting.</remarks>
-        /// <param name="value">The string whose line endings will be normalized to CRLF format. If <paramref name="value"/> is <see
-        /// langword="null"/> or consists only of white-space characters, the original value is returned.</param>
-        /// <returns>A string in which all line endings have been replaced with CRLF sequences. Returns the original value if it
-        /// is <see langword="null"/> or contains only white-space.</returns>
-        public static string ToCrLf(this string value)
-        {
-            if (string.IsNullOrWhiteSpace(value)) return value;
-
-            value = value.Replace(CRLF, LF);
-            value = value.Replace(CR, LF);
-            value = value.Replace(LF, CRLF);
-
-            return value;
-        }
-
-        /// <summary>
         /// Returns a string containing a specified number of characters from the left side of a string, 
         /// + suffix (if value was actually truncated)
         /// </summary>
