@@ -22,7 +22,6 @@ A demo of all my `DotNet` packages can be found [here](https://github.com/marqdo
 
   - `Strings`
     - `ToCrLf()`. Converts line endings in the specified string to carriage return and line feed (`\r\n`).
-    - `ToNewLine()`. Converts line endings in the specified string to `Environment.NewLine`.
     - `Truncate`. Truncates a string to a specified length.
 
 - **Classes**
@@ -31,6 +30,9 @@ A demo of all my `DotNet` packages can be found [here](https://github.com/marqdo
   - `StateModel`. Provides a base class for models that support state change notification.
 
 ## Release Notes
+- `10.0.0-Preview3`
+  - `Strings`. Removed `string.ToNewLine()`. use CLR method `string.ReplaceLineEndings()` instead.
+
 - `10.0.0-Preview2`
   - `NRange`. Added `StringValue` property. Wraps the Value property as a string.
     Typically used in binding scenarios that require a string.

@@ -29,19 +29,6 @@
         }
 
         /// <summary>
-        /// Converts line endings in the specified string to <see cref="Environment.NewLine"/>
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        public static string ToNewLine(this string value)
-        {
-            if (string.IsNullOrWhiteSpace(value)) return value;
-            value = value.ToCrLf();
-            value = value.Replace(CRLF, Environment.NewLine);
-            return value;
-        }
-
-        /// <summary>
         /// Returns a string containing a specified number of characters from the left side of a string, 
         /// + suffix (if value was actually truncated)
         /// </summary>
