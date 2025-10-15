@@ -4,7 +4,7 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Version>10.0.0-Preview3.1</Version>
+    <Version>10.0.0-Preview3.2</Version>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>C# Classes and Extensions</Title>
     <PackageProjectUrl>https://github.com/marqdouj/DotNet</PackageProjectUrl>
@@ -16,6 +16,7 @@
     <Description>C# classes and extensions I find useful in my .NET projects</Description>
     <PackageIcon>DMNuGet.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

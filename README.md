@@ -29,6 +29,9 @@ A demo of all my `DotNet` packages can be found [here](https://github.com/marqdo
   - `StateModel`. Provides a base class for models that support state change notification.
 
 ## Release Notes
+- `10.0.0-Preview3.2`
+  - `XMLComments`. Comments are now distributed with the pacakge.
+
 - `10.0.0-Preview3.1`
   - `Strings`. Removed `string.ToCrLf()`. use CLR method `string.ReplaceLineEndings()` instead.
 
