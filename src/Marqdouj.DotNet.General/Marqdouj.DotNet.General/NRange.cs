@@ -102,7 +102,7 @@ namespace Marqdouj.DotNet.General
         public T Step { get; set; } = T.CreateChecked(1);
 
         /// <summary>
-        /// <see cref="IStringValue"/>
+        /// String wrapper to Value property. Useful in binding secenarios that require a string.
         /// </summary>
         /// <remarks>If value does not parse it will be ignored.</remarks>
         public string? StringValue
