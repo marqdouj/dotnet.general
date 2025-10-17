@@ -93,6 +93,134 @@ namespace Marqdouj.DotNet.General.Tests
 
         #endregion
 
+        #region ToNumber Double
+
+        [TestMethod]
+        public void ToNumber_Double_NoDefault_EmptyString()
+        {
+            var value = "";
+            var result = value.ToNumber<double>();
+
+            Console.WriteLine(result);
+            Assert.AreEqual(default, result);
+        }
+
+        [TestMethod]
+        public void ToNumber_Double_WithDefault_EmptyString()
+        {
+            var value = "";
+            var result = value.ToNumber<double>(-999.1);
+
+            Console.WriteLine(result);
+            Assert.AreEqual(-999.1, result);
+        }
+
+        [TestMethod]
+        public void ToNumber_Double_ValidString()
+        {
+            var value = "1.2";
+            var result = value.ToNumber<double>();
+
+            Console.WriteLine(result);
+            Assert.AreEqual(1.2, result);
+        }
+
+        [TestMethod]
+        public void ToNumber_Double_WithDefault_ValidString()
+        {
+            var value = "1.2";
+            var result = value.ToNumber<double>(-999);
+
+            Console.WriteLine(result);
+            Assert.AreEqual(1.2, result);
+        }
+
+        [TestMethod]
+        public void ToNumber_Double_InValidString()
+        {
+            var value = "xfga";
+            var result = value.ToNumber<double>();
+
+            Console.WriteLine(result);
+            Assert.AreEqual(default, result);
+        }
+
+        [TestMethod]
+        public void ToNumber_Double_WithDefault_InValidString()
+        {
+            var value = "xfga";
+            var result = value.ToNumber<double>(-999.2);
+
+            Console.WriteLine(result);
+            Assert.AreEqual(-999.2, result);
+        }
+
+        #endregion
+
+        #region ToNumber Int
+
+        [TestMethod]
+        public void ToNumber_Int_NoDefault_EmptyString()
+        {
+            var value = "";
+            var result  = value.ToNumber<int>();
+
+            Console.WriteLine(result);
+            Assert.AreEqual(default, result);
+        }
+
+        [TestMethod]
+        public void ToNumber_Int_WithDefault_EmptyString()
+        {
+            var value = "";
+            var result = value.ToNumber<int>(-999);
+
+            Console.WriteLine(result);
+            Assert.AreEqual(-999, result);
+        }
+
+        [TestMethod]
+        public void ToNumber_Int_ValidString()
+        {
+            var value = "1";
+            var result = value.ToNumber<int>();
+
+            Console.WriteLine(result);
+            Assert.AreEqual(1, result);
+        }
+
+        [TestMethod]
+        public void ToNumber_Int_WithDefault_ValidString()
+        {
+            var value = "1";
+            var result = value.ToNumber<int>(-999);
+
+            Console.WriteLine(result);
+            Assert.AreEqual(1, result);
+        }
+
+        [TestMethod]
+        public void ToNumber_Int_InValidString()
+        {
+            var value = "xfga";
+            var result = value.ToNumber<int>();
+
+            Console.WriteLine(result);
+            Assert.AreEqual(default, result);
+        }
+
+        [TestMethod]
+        public void ToNumber_Int_WithDefault_InValidString()
+        {
+            var value = "xfga";
+            var result = value.ToNumber<int>(-999);
+
+            Console.WriteLine(result);
+            Assert.AreEqual(-999, result);
+        }
+
+        #endregion
+
         #region Truncate
 
         [TestMethod]

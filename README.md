@@ -11,17 +11,19 @@ A demo of all my `DotNet` packages can be found [here](https://github.com/marqdo
 ## Features
 - **Extensions**
   - `Exceptions`
-    - `ToMessage()`. Resolves all messages recursively. Returns a joined string (optional separator).
+    - `exception.ToMessage()`. Resolves all messages recursively. Returns a joined string (optional separator).
     Originally designed for use with Aggregate exceptions, but will work with any Exception.
-    - `ToList()`. Resolves all messages recursively. Returns a list of messages.
+    - `exception.ToList()`. Resolves all messages recursively. Returns a list of messages.
     Originally designed for use with Aggregate exceptions, but will work with any Exception.
 
   - `Numbers`
-    - `IsNumberTypeCode(object)`. Checks if the object's underlying type code is a number.
-    - `ToNList<T>(string)`. Converts a delimited string to a List of numbers (NList).
+    - `object.IsNumberTypeCode()`. Checks if the object's underlying type code is a number.
+    - `string.ToNList<T>()`. Converts a delimited string to a List of numbers (NList).
+    - `string.ToNumber<T>()`. Converts a string to To a number.
+      - If the string can't be converted, default(T) will be returned unless a default value is provided.
 
   - `Strings`
-    - `Truncate`. Truncates a string to a specified length.
+    - `string.Truncate()`. Truncates a string to a specified length.
 
 - **Classes**
   - `EnumList`. Manages a list of Enum (no duplicates)
@@ -29,6 +31,9 @@ A demo of all my `DotNet` packages can be found [here](https://github.com/marqdo
   - `StateModel`. Provides a base class for models that support state change notification.
 
 ## Release Notes
+- `10.0.0-Preview4.0`
+  - `string.ToNumber<T>()`. New method.
+
 - `10.0.0-Preview3.3`
   - `XMLComments`. Comments are now distributed with the pacakge.
 
