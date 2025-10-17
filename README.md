@@ -19,7 +19,7 @@ A demo of all my `DotNet` packages can be found [here](https://github.com/marqdo
   - `Numbers`
     - `object.IsNumberTypeCode()`. Checks if the object's underlying type code is a number.
     - `string.ToNList<T>()`. Converts a delimited string to a List of numbers (NList).
-    - `string.ToNumber<T>()`. Converts a string to To a number.
+    - `string.ToNumber<T>()`. Converts a string to to a number.
       - If the string can't be converted, default(T) will be returned unless a default value is provided.
 
   - `Strings`
