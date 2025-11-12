@@ -1,12 +1,10 @@
 # DotNet.General
 
-> NOTE: This is a new repository and is released as a Preview version.
-
 ## Summary
 C# classes and extensions I find useful in my .NET projects.
 
 ## Demo
-A demo of all my `DotNet` packages can be found [here](https://github.com/marqdouj/dotnet.demo).
+A demo of this, other of my `DotNet` packages. can be found [here](https://github.com/marqdouj/dotnet.demo).
 
 ## Features
 - **Extensions**
@@ -31,26 +29,5 @@ A demo of all my `DotNet` packages can be found [here](https://github.com/marqdo
   - `StateModel`. Provides a base class for models that support state change notification.
 
 ## Release Notes
-- `10.0.0-Preview4.0`
-  - `string.ToNumber<T>()`. New method.
-
-- `10.0.0-Preview3.3`
-  - `XMLComments`. Comments are now distributed with the pacakge.
-
-- `10.0.0-Preview3.1`
-  - `Strings`. Removed `string.ToCrLf()`. use CLR method `string.ReplaceLineEndings()` instead.
-
-- `10.0.0-Preview3`
-  - `Strings`. Removed `string.ToNewLine()`. use CLR method `string.ReplaceLineEndings()` instead.
-
-- `10.0.0-Preview2`
-  - `NRange`. Added `StringValue` property. Wraps the Value property as a string.
-    Typically used in binding scenarios that require a string.
-
-- `10.0.0-Preview1`
-  - `EnumList`.
-    - `Contains`. Added new method.
-    - `AddValue`. changed the return value from void to bool.
-
-- `10.0.0-Preview`
+- `10.0.0`
   - Initial release.
