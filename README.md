@@ -4,7 +4,7 @@
 C# classes and extensions I find useful in my .NET projects.
 
 ## Demo
-A demo of this, other of my `DotNet` packages. can be found [here](https://github.com/marqdouj/dotnet.demo).
+A demo of this, and other of my `DotNet` packages, can be found [here](https://github.com/marqdouj/dotnet.demo).
 
 ## Features
 - **Extensions**
