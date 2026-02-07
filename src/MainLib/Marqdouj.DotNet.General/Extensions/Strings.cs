@@ -1,5 +1,4 @@
-﻿using System.Data.SqlTypes;
-using System.Globalization;
+﻿using System.Globalization;
 using System.Numerics;
 
 namespace Marqdouj.DotNet.General.Extensions
@@ -18,8 +17,24 @@ namespace Marqdouj.DotNet.General.Extensions
         /// <param name="value">string to parse to INumber<typeparamref name="T"/></param>
         /// <param name="defaultValue">value to return if unable to parse to INumber<typeparamref name="T"/></param>
         /// <returns>INumber<typeparamref name="T"/> if converted; otherwise typeparam<paramref name="defaultValue"/></returns>
-        public static T? ToNumber<T>(this string? value, T? defaultValue = default) 
+        public static T ToNumber<T>(this string? value, T defaultValue = default!) 
             where T : INumber<T>
+        {
+            if (T.TryParse(value, NumberStyles.Any, null, out var result))
+                return result;
+
+            return defaultValue;
+        }
+
+        /// <summary>
+        /// Converts a string to a number. Allows for nullable.
+        /// </summary>
+        /// <typeparam name="T">Type of INumber<typeparamref name="T"/></typeparam>
+        /// <param name="value">string to parse to INumber<typeparamref name="T"/></param>
+        /// <param name="defaultValue">value to return if unable to parse to INumber<typeparamref name="T"/></param>
+        /// <returns>INumber<typeparamref name="T"/> if converted; otherwise typeparam<paramref name="defaultValue"/></returns>
+        public static T? ToNumberN<T>(this string? value, T? defaultValue = default)
+            where T : struct, INumber<T>
         {
             if (T.TryParse(value, NumberStyles.Any, null, out var result))
                 return result;

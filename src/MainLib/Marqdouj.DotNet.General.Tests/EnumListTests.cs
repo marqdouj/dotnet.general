@@ -37,7 +37,7 @@
             var names = items.GetNames();
 
             //Assert
-            Assert.AreEqual(expectedCount, names.Count);
+            Assert.HasCount(expectedCount, names);
         }
 
         [TestMethod]
@@ -56,7 +56,7 @@
             var names = items.GetNames(false);
 
             //Assert
-            Assert.AreEqual(expectedCount, names.Count);
+            Assert.HasCount(expectedCount, names);
             Assert.AreEqual(expectedItem0, names[0]);
             Assert.AreEqual(expectedItem1, names[1]);
             Assert.AreEqual(expectedItem2, names[2]);
@@ -79,7 +79,7 @@
             var names = items.GetNames(true);
 
             //Assert
-            Assert.AreEqual(expectedCount, names.Count);
+            Assert.HasCount(expectedCount, names);
             Assert.AreEqual(expectedItem0, names[0]);
             Assert.AreEqual(expectedItem1, names[1]);
             Assert.AreEqual(expectedItem2, names[2]);
