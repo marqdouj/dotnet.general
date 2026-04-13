@@ -2,6 +2,13 @@
 
 namespace Marqdouj.DotNet.General
 {
+    public interface IStateModel
+    {
+        bool SuppressNotifications { get; set; }
+
+        event Action<string>? StateChanged;
+    }
+
     /// <summary>
     /// Provides a base class for models that support state change notification and suppression of notifications.
     /// Enables derived types to implement property change patterns and notify observers when state changes occur.
@@ -11,7 +18,7 @@ namespace Marqdouj.DotNet.General
     /// notify listeners when state changes. Notifications can be suppressed during batch updates by setting
     /// SuppressNotifications to true. Override NotifyStateChanged to customize notification dispatching behavior in
     /// derived classes.</remarks>
-    public abstract class StateModel
+    public abstract class StateModel : IStateModel
     {
         /// <summary>
         /// Attempts to update the specified value and notify listeners if the value was changed
@@ -66,10 +73,10 @@ namespace Marqdouj.DotNet.General
         /// <returns><see langword="true"/> if the new value will cause a state change; otherwise, <see langword="false"/>.</returns>
         public static bool StateWillChange<T>(T oldValue, T newValue)
         {
-            if (oldValue != null) 
+            if (oldValue != null)
                 return !oldValue.Equals(newValue);
 
-            if (newValue != null) 
+            if (newValue != null)
                 return !newValue.Equals(oldValue);
 
             return false;

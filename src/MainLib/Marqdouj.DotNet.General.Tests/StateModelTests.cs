@@ -146,6 +146,67 @@
 
         #endregion
 
+        #region StateChanged IStateModel
+
+        [TestMethod]
+        public void IStateModel_SetValue_NotifiyChanged_True()
+        {
+            var wasChanged = false;
+
+            var model = new TestModel();
+            IStateModel iModel = model;
+
+            iModel.StateChanged += (string methodName) =>
+            {
+                wasChanged = true;
+            };
+
+            model.MyInt = 1;
+
+            Assert.IsTrue(wasChanged);
+        }
+
+        [TestMethod]
+        public void IStateModel_SetValue_NotifiyChanged_False()
+        {
+            var wasChanged = false;
+
+            var model = new TestModel();
+            IStateModel iModel = model;
+
+            iModel.StateChanged += (string methodName) =>
+            {
+                wasChanged = true;
+            };
+
+            model.MyInt = 0;
+
+            Assert.IsFalse(wasChanged);
+        }
+
+        [TestMethod]
+        public void IStateModel_SetValue_NotifiyChanged_True_Suppressed()
+        {
+            var notified = false;
+
+            var model = new TestModel
+            {
+                SuppressNotifications = true
+            };
+            IStateModel iModel = model;
+
+            iModel.StateChanged += (string methodName) =>
+            {
+                notified = true;
+            };
+
+            model.MyInt = 1;
+
+            Assert.IsFalse(notified);
+        }
+
+        #endregion
+
         private class TestModel : StateModel
         {
             public bool WasChanged { get; private set; }

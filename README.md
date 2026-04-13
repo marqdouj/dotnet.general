@@ -35,6 +35,9 @@ A demo of this, and other of my `DotNet` packages, can be found [here](https://g
   - `StateModel`. Provides a base class for models that support state change notification.
 
 ## Release Notes
+- `10.1.1`
+  - `IStateModel`. Added interface for StateModel. StateModel now implements IStateModel.
+
 - `10.1.0`
   - `Numbers`
     - `string.ToNumberN<T>()`. New method.
