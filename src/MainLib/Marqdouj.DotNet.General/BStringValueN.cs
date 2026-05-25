@@ -4,9 +4,9 @@
     /// String wrapper for a nullable bool. Useful in binding scenarios that require a string.
     /// </summary>
     /// <param name="value"></param>
-    public class BStringValueN(bool? value = default)
+    public class BStringValueN(bool? value = default) : StateModel
     {
-        public virtual bool? Value { get; protected set; } = value;
+        public virtual bool? Value { get; protected set { SetValue(ref field, value); } } = value;
 
         /// <summary>
         /// Wraps the <see cref="Value"/> property.

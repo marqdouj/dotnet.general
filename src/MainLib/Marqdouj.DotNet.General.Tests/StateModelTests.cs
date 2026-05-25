@@ -85,6 +85,25 @@
             model.MyInt = 1;
 
             Assert.IsTrue(wasChanged);
+            Assert.AreEqual(1, model.MyInt);
+        }
+
+        [TestMethod]
+        public void StateModel_SetValue_NoField_NotifiyChanged_True()
+        {
+            var wasChanged = false;
+
+            var model = new TestModel();
+
+            model.StateChanged += (string methodName) =>
+            {
+                wasChanged = true;
+            };
+
+            model.MyIntNoField = 1;
+
+            Assert.IsTrue(wasChanged);
+            Assert.AreEqual(1, model.MyIntNoField);
         }
 
         [TestMethod]
@@ -214,6 +233,10 @@
             #region MyInt
             private int myInt;
             public int MyInt { get => myInt; set => WasChanged = SetValue(ref myInt, value); }
+            #endregion
+
+            #region MyIntNoField
+            public int MyIntNoField { get; set => WasChanged = SetValue(ref field, value); }
             #endregion
         }
     }

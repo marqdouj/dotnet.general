@@ -3,7 +3,7 @@ using System.Numerics;
 
 namespace Marqdouj.DotNet.General
 {
-    public class NStringValue<T>(T value = default!) where T : INumber<T>
+    public class NStringValue<T>(T value = default!) : StateModel where T : INumber<T>
     {
         /// <summary>
         /// Value that gets wrapped by <see cref="StringValue"/>

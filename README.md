@@ -28,13 +28,19 @@ A demo of this, and other of my `DotNet` packages, can be found [here](https://g
 - **Classes**
   - `EnumList`. Manages a list of Enum (no duplicates)
   - `NRange`. Numeric range (NRange) constrained within a minimum and maximum value.
-  - `BStringValue`. String wrapper for a bool. Useful in binding scenarios that require a string.
-  - `BStringValueN`. String wrapper for a nullable bool. Useful in binding scenarios that require a string.
-  - `NStringValue<T>`. String wrapper for a number. Useful in binding scenarios that require a string.
-  - `NStringValueN<T>`. String wrapper for a nullable number. Useful in binding scenarios that require a string.
+  - `BStringValue`. String wrapper for a bool. Useful in binding scenarios that require a string. Derives from StateModel, so it supports state change notification.
+  - `BStringValueN`. String wrapper for a nullable bool. Useful in binding scenarios that require a string. Derives from StateModel, so it supports state change notification.
+  - `NStringValue<T>`. String wrapper for a number. Useful in binding scenarios that require a string. Derives from StateModel, so it supports state change notification.
+  - `NStringValueN<T>`. String wrapper for a nullable number. Useful in binding scenarios that require a string. Derives from StateModel, so it supports state change notification.
   - `StateModel`. Provides a base class for models that support state change notification.
 
 ## Release Notes
+- `10.2.0` These models now derive from StateModel, so they support state change notification.
+  - `BStringValue`.
+  - `BStringValueN`. 
+  - `NStringValue<T>`.
+  - `NStringValueN<T>`.
+
 - `10.1.2`
   - Fixed link to project website.
 

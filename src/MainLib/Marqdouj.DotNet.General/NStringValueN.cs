@@ -8,9 +8,9 @@ namespace Marqdouj.DotNet.General
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <param name="value"></param>
-    public class NStringValueN<T>(T? value = default) where T : struct, INumber<T>
+    public class NStringValueN<T>(T? value = default) : StateModel where T : struct, INumber<T>
     {
-        public virtual T? Value { get; protected set; } = value;
+        public virtual T? Value { get; protected set { SetValue(ref field, value); } } = value;
 
         /// <summary>
         /// Minimum value (if not null).
